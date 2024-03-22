@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block title %}
+    Results
+{% endblock %}
+{% block content %}
+    {% include 'navbar.html' %}
+    {% include 'alerts.html' %}
+    <style>
+        .mt-30 {
+            margin-top: 120px;
+        }
+    </style>
+    <div class="container mt-30">
+        <div class="shadow w-100 w-md-75 mt-30 w-lg-50 mx-auto p-5">
+            <h2 class=" text-center">RESULTS</h2>
+
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto ">
+                    <h3 class="mb-5">Presidential Candidates Results</h3>
+                    {% for candidate in candidates %}
+                        {% if candidate.position == 'President' %}
+
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ candidate.image.url }}" alt="{{ candidate.full_name }}"
+                                         class=" rounded-circle" style="height: 80px; width: 80px;">
+                                    <div class="m-4">
+                                        <p class="mb-2 ">{{ candidate.full_name }}</p>
+                                        <div class="progress" style="width: 250px;">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                 style="width: {{ candidate.vote_percentage }}%"
+                                                 aria-valuenow="{{ candidate.vote_percentage }}" aria-valuemin="0"
+                                                 aria-valuemax="100">{{ candidate.vote_percentage }}%
+                                            </div>
+                                        </div>
+                                          <p class="mt-2 text-center">{{ candidate.votes }} votes</p>
+                                    </div>
+                                   
+                                    
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto ">
+                    <h3 class="mb-5"> Vice Presidential Candidates Results</h3>
+                    {% for candidate in candidates %}
+                        {% if candidate.position == 'Vice President' %}
+
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ candidate.image.url }}" alt="{{ candidate.full_name }}"
+                                         class=" rounded-circle" style="height: 80px; width: 80px;">
+                                    <div class="m-4">
+                                        <p class="mb-2">{{ candidate.full_name }}</p>
+                                        <div class="progress" style="width: 250px;">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                 style="width: {{ candidate.vote_percentage }}%"
+                                                 aria-valuenow="{{ candidate.vote_percentage }}" aria-valuemin="0"
+                                                 aria-valuemax="100">{{ candidate.vote_percentage }}%
+                                            </div>
+                                            
+                                        </div>
+                                         <p class="mt-2 text-center">{{ candidate.votes }} votes</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto ">
+                    <h3 class="mb-5">Finance Secretary Candidates Results</h3>
+                    {% for candidate in candidates %}
+                        {% if candidate.position == 'Finance Secretary' %}
+
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ candidate.image.url }}" alt="{{ candidate.full_name }}"
+                                         class=" rounded-circle" style="height: 80px; width: 80px;">
+                                    <div class="m-4">
+                                        <p class="mb-2">{{ candidate.full_name }}</p>
+                                        <div class="progress" style="width: 250px;">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                 style="width: {{ candidate.vote_percentage }}%"
+                                                 aria-valuenow="{{ candidate.vote_percentage }}" aria-valuemin="0"
+                                                 aria-valuemax="100">{{ candidate.vote_percentage }}%
+                                            </div>
+                                        </div>
+                                         <p class="mt-2 text-center">{{ candidate.votes }} votes</p>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto ">
+                    <h3 class="mb-5">Academic Secretary Candidates Results</h3>
+                    {% for candidate in candidates %}
+                        {% if candidate.position == 'Academic Secretary' %}
+
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ candidate.image.url }}" alt="{{ candidate.full_name }}"
+                                         class=" rounded-circle" style="height: 80px; width: 80px;">
+                                    <div class="m-4">
+                                        <p class="mb-2">{{ candidate.full_name }}</p>
+                                        <div class="progress" style="width: 250px;">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                 style="width: {{ candidate.vote_percentage }}%"
+                                                 aria-valuenow="{{ candidate.vote_percentage }}" aria-valuemin="0"
+                                                 aria-valuemax="100">{{ candidate.vote_percentage }}%
+                                            </div>
+                                        </div>
+                                         <p class="mt-2 text-center">{{ candidate.votes }} votes</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-6 mx-auto ">
+                    <h3 class="mb-5">Delegate Candidates Results</h3>
+                    {% for candidate in candidates %}
+                        {% if candidate.position == 'Delegate' %}
+
+                            <div class="mb-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="{{ candidate.image.url }}" alt="{{ candidate.full_name }}"
+                                         class=" rounded-circle" style="height: 80px; width: 80px;">
+                                    <div class="m-4">
+                                        <p class="mb-2">{{ candidate.full_name }}</p>
+                                        <div class="progress" style="width: 250px;">
+                                            <div class="progress-bar bg-primary" role="progressbar"
+                                                 style="width: {{ candidate.vote_percentage }}%"
+                                                 aria-valuenow="{{ candidate.vote_percentage }}" aria-valuemin="0"
+                                                 aria-valuemax="100">{{ candidate.vote_percentage }}%
+                                            </div>
+                                        </div>
+                                         <p class="mt-2 text-center">{{ candidate.votes }} votes</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    {% include 'footer.html' %}
+{% endblock %}

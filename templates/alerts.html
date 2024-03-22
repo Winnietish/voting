@@ -1,0 +1,20 @@
+{% if messages %}
+  <div id="messages">
+    {% for message in messages %}
+      <div class="alert {{ message.tags }}">
+        <p class="nav-link">{{ message }}</p>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const messageBox = document.getElementById("messages");
+    if (messageBox) {
+      setTimeout(function() {
+        messageBox.style.display = "none";
+      }, 5000); // 5 seconds in milliseconds
+    }
+  });
+</script>
